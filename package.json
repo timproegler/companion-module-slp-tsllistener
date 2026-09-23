@@ -1,5 +1,5 @@
 {
-	"name": "tslproducts-umdlistener",
+	"name": "slp-tsllistener",
 	"version": "3.0.2",
 	"main": "index.js",
 	"scripts": {
@@ -12,7 +12,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/bitfocus/companion-module-tslproducts-umdlistener.git"
+		"url": "git+https://github.com/timproegler/companion-module-slp-tsllistener.git"
 	},
 	"devDependencies": {
 		"@companion-module/tools": "^2.8.0",
