@@ -30,11 +30,8 @@ module.exports = {
 					id: 'number',
 					default: 'tally2',
 					choices: [
-						{ id: 'tally1', label: 'PVW' },
-						{ id: 'tally2', label: 'PGM' },
-						//also add tally1-4 generically
-						{ id: 'tally1', label: 'Tally 1' },
-						{ id: 'tally2', label: 'Tally 2' },
+						{ id: 'tally1', label: 'Tally 1 / PVW' },
+						{ id: 'tally2', label: 'Tally 2 / PGM' },
 						{ id: 'tally3', label: 'Tally 3' },
 						{ id: 'tally4', label: 'Tally 4' },
 					],

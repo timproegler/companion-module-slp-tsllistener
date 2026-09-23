@@ -2,6 +2,7 @@ const { InstanceStatus } = require('@companion-module/base')
 
 const dgram = require('dgram')
 const net = require('net')
+const { performance } = require('node:perf_hooks');
 
 module.exports = {
 	openPort() {
@@ -98,7 +99,7 @@ function startUDP(self) {
 
 		self.SERVER.on('message', function (message, rinfo) {
 			self.log('debug', `Received data: ${message.toString('hex')}`)
-			self.setVariableValues({ module_state: 'Tally Data Received.' })
+			self.setVariableValues({ module_state: 'Tally Data Received' })
 
 			if (self.config.protocol == 'tsl3.1') {
 				parseTSL31Packet(self, message)
@@ -121,7 +122,7 @@ function startTCP(self) {
 		self.SERVER = net.createServer(function (socket) {
 			socket.on('data', function (data) {
 				self.log('debug', `Received data: ${data.toString('hex')}`)
-				self.setVariableValues({ module_state: 'Tally Data Received.' })
+				//self.setVariableValues({ module_state: 'Tally Data Received' })
 
 				if (self.config.protocol == 'tsl3.1') {
 					parseTSL31Packet(self, data)
@@ -300,6 +301,8 @@ function processTSLTallyObj(self, tally) {
 		if (self.TALLIES[i].address == tally.address) {
 			self.TALLIES[i].tally1 = tally.tally1
 			self.TALLIES[i].tally2 = tally.tally2
+			self.TALLIES[i].tally3 = tally.tally3
+			self.TALLIES[i].tally4 = tally.tally4
 			self.TALLIES[i].label = tally.label.trim().replace(self.config.filter, '')
 			if (self.config.protocol == 'tsl5.0') {
 				self.TALLIES[i].rh_tally = tally.rh_tally
@@ -345,9 +348,10 @@ function processTSLTallyObj(self, tally) {
 		self.initVariables()
 		self.initFeedbacks()
 	}
-
+console.log('test: ' + JSON.stringify(self.TALLIES));
 	self.updateStatus(InstanceStatus.Ok)
-	self.setVariableValues({ module_state: 'Tally Data Received.' })
+	self.setVariableValues({ current_msg: JSON.stringify(self.TALLIES) });
+	self.setVariableValues({ module_state: 'Tally Data Received' })
 
 	self.checkVariables()
 	self.checkFeedbacks()

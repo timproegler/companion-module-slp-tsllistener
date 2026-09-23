@@ -8,15 +8,14 @@ module.exports = {
 				id: 'info',
 				width: 12,
 				label: 'Information',
-				value:
-					'This module listens to incoming TSL UMD data at the TCP or UDP port specified and updates Feedbacks and Variables accordingly.',
+				value: 'This module listens to incoming TSL UMD data at the TCP or UDP port specified and updates Feedbacks and Variables accordingly.',
 			},
 			{
 				type: 'number',
 				id: 'port',
 				width: 6,
 				label: 'Listening Port',
-				default: '9800',
+				default: '40001',
 				regex: this.REGEX_PORT,
 			},
 			{
