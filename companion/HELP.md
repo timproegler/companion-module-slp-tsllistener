@@ -1,26 +1,38 @@
-# TSL Products UMD Listener
+##### SessionLinkPRO Solutions GmbH TSL Listener
 
-This module will allow you to listen for incoming TSL UMD data from your video switcher and set tally states on your Companion Buttons.
 
-## Configuration
 
-- Enter the listening port that Companion should use to listen for the incoming data.
-- Select whether to listen via TCP or UDP.
-- Select the Protocol Version to use
 
-## Actions
+
+This module will allow you to listen for incoming TSL UMD data and
+
+* set tally states on your Companion Buttons
+* forward the TSL UMD data as JSON string via a different protocol
+
+## 
+
+###### Configuration
+
+* Enter the listening port that Companion should use to listen for the incoming data
+* Select whether to listen via TCP or UDP
+* Select the Protocol Version to use
+
+## 
+
+###### Actions
 
 This module inherently has no actions. If you wish to perform an action based on a tally state change, use a Trigger.
 
-## Variables
+## 
 
-- Variable for each Address with UMD Label for value (address_label)
-- Variable for each Address and Tally State (On/Off) (address_1, address_2, address_3, address_4)
+###### Variables
 
-## Feedbacks
+* Variable for each Address 'x' with UMD Label for value (tsl-listener:tally\_x\_label)
+* Variable for each Address 'x' and Tally State (On/Off) (tsl-listener:tally\_x\_tally1 ... tsl-listener:tally\_x\_tally4)
 
-- Set button to color if address `x` Tally `y` (1-4) is this state (On/Off)
+## 
 
-## Presets
+###### Feedbacks
 
-- Tally State Green/Red with Tally Label from Variable
+* Set button to color if address 'x' Tally 1-4 is this state (On/Off)
+
