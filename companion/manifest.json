@@ -1,16 +1,16 @@
 {
-	"id": "tslproducts-umdlistener",
-	"name": "tslproducts-umdlistener",
-	"shortname": "tslumd-listener",
+	"id": "slp-tsllistener",
+	"name": "slp-tsllistener",
+	"shortname": "tsl-listener",
 	"description": "Listens to incoming TSL UMD data.",
 	"version": "0.0.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/bitfocus/companion-module-tslproducts-umdlistener.git",
-	"bugs": "https://github.com/bitfocus/companion-module-tslproducts-umdlistener/issues",
+	"repository": "git+https://github.com/timproegler/companion-module-slp-tsllistener.git",
+	"bugs": "https://github.com/timproegler/companion-module-slp-tsllistener/issues",
 	"maintainers": [
 		{
-			"name": "Joseph Adams",
-			"email": "josephdadams@gmail.com"
+			"name": "Tim Proegler",
+			"email": "tim.proegler@sessionlinkpro.com"
 		}
 	],
 	"legacyIds": [],
@@ -20,7 +20,7 @@
 		"apiVersion": "0.0.0",
 		"entrypoint": "../index.js"
 	},
-	"manufacturer": "TSL Products",
-	"products": ["UMD Listener"],
-	"keywords": ["UMD", "Tally"]
+	"manufacturer": "SessionLinkPRO Solutions GmbH",
+	"products": ["TSL Listener"],
+	"keywords": ["TSL", "Tally"]
 }
