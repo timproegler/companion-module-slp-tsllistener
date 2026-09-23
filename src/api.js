@@ -348,7 +348,7 @@ function processTSLTallyObj(self, tally) {
 		self.initVariables()
 		self.initFeedbacks()
 	}
-console.log('test: ' + JSON.stringify(self.TALLIES));
+
 	self.updateStatus(InstanceStatus.Ok)
 	self.setVariableValues({ current_msg: JSON.stringify(self.TALLIES) });
 	self.setVariableValues({ module_state: 'Tally Data Received' })
