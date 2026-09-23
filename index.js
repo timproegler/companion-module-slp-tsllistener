@@ -50,6 +50,8 @@ class TSLProductsUMDListenerInstance extends InstanceBase {
 			this.config = config
 		}
 
+		this.TALLIES = []
+
 		if (this.SERVER !== undefined) {
 			//close out any open ports and re-init
 			this.closePort()

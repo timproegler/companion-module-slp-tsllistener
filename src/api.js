@@ -122,7 +122,7 @@ function startTCP(self) {
 		self.SERVER = net.createServer(function (socket) {
 			socket.on('data', function (data) {
 				self.log('debug', `Received data: ${data.toString('hex')}`)
-				//self.setVariableValues({ module_state: 'Tally Data Received' })
+				self.setVariableValues({ module_state: 'Tally Data Received' })
 
 				if (self.config.protocol == 'tsl3.1') {
 					parseTSL31Packet(self, data)
@@ -164,7 +164,10 @@ function startTCP(self) {
 }
 
 function parseTSL31Packet(self, buffer) {
-	if (buffer.length < 18) return
+	if (buffer.length != 18) {
+		self.log('warn', 'Received TSL 3.1 packet length mismatch.')
+		return
+	}
 
 	// Byte 0: 0x80 + address
 	const address = buffer.readUInt8(0) - 0x80
